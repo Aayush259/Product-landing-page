@@ -44,6 +44,7 @@ body {
     align-items: center;
     list-style: none;
     margin-top: 1.2rem;
+    opacity: 1;
 }
 
 .nav-link {
@@ -64,7 +65,14 @@ body {
 
 .hamburger {
     display: none;
-    margin-top: 2rem;
+    margin-top: 1.8rem;
+    border: none;
+    background-color: var(--Nav-background);
+    height: 24px;
+}
+
+.hamburger:active {
+    background-color: none;
 }
 
 .bar {
@@ -273,6 +281,15 @@ main {
 }
 
 @media only screen and (max-width: 630px) {
+    body {
+        overflow: -moz-hidden-unscrollable;
+        width: 100vw;
+    }
+
+    main {
+        padding: 0;
+    }
+
     .hamburger {
         display: block;
         cursor: pointer;
@@ -291,18 +308,20 @@ main {
     }
 
     #nav-bar ul {
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 70px;
         right: 0;
         background-color: var(--Black);
         border-radius: 10px;
+        opacity: 0;
         transition: all 0.3s ease-in-out;
-        transform: translateX(100rem);
     }
 
     .ul-show {
-        transform: translateX(0rem) !important;
+        display: flex !important;
+        opacity: 1 !important;
     }
 
     .nav-link {
